@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 인라인 요소는 글자를 다루기 위한 요소(그 자체가 글자처럼 취급됨) -->
+  <!-- enter = 공백 하나로 인식 -->
+  <!-- 수평으로 쌓임, 가로/세로가 콘텐츠 크기만큼 줄어듦(= width와 height 속성을 지정해도 무시됨) -->
+  <span>안녕</span><span>세상아</span>  
+  <span>안녕</span>
+  <span>세상아</span>
+  <br>
+  
+  <!-- 글자는 가로/세로 사이즈를 가질 수 없음(지정 불가) -->
+  <span style="width: 100px;">안녕</span>
+  <span style="height: 100px;">세상아</span>
+  <br>
+  
+  <!-- 상하 여백은 불가능, 좌우 여백은 가능 -->
+  <span style="margin: 20px; background-color: orange;">안녕</span>
+  <span style="padding: 20px; background-color: orange;">세상아</span>
+  <br>
+
+  <!-- 인라인 요소 안에 블록 요소 사용 금지(웹 표준 에러) -->
+  <!-- 글자 안에는 상자를 넣을 수 없음 -->
+  <span>
+    <div>div in span</div>
+  </span>
+  <span>
+    <span>span in div</span>
+  </span>
+  
+</body>
+</html>
