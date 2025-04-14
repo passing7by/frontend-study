@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .main-background {
+      width: 100%;
+      height: 500px;
+      background-image: url("images/shoes.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+
+      /* 마진 상쇄 피하기 */
+      /* 1. 테두리가 안붙게 살짝 떨어트림(꼼수) */
+      /* padding: 0.1px; */
+      /* 2. 패딩 사용하기(권장) */
+      padding-top: 50px;
+
+      position: relative;
+    }
+
+    .main-title {
+      color: #fff;
+      font-size: 40px;
+      /* margin-top: 100px; */
+      /* (참고) 마진 상쇄 현상
+        : 박스들의 테두리가 만나면 margin이 합쳐짐
+        (박스가 내부에서 만나든 외부에서 만나든 상관없이) 마진을 하나로 합쳐주고
+        둘 다 마진이 있으면 둘 중에 더 큰 마진을 하나만 적용
+        
+        1. 박스(block) 2개가 부모-자식 관계로 위쪽 테두리가 겹친 상태
+        2. 박스 2개가 형제 관계로 위, 아래 테두리가 겹친 상태
+      */
+    }
+    .main-content {
+      color: #fff;
+    }
+    .main-button {
+      padding: 10px 30px;
+      font-size: 20px;
+      background-color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+      /* 누를 수 있는 요소는 커서 모양을 포인터로 */
+    }
+    .main-button:hover {
+      background-color: #ccc;
+    }
+
+    /* 겹치는 레이아웃 만들기 */
+    .sub-description {
+      width: 80%;
+      max-width: 700px;
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 20px;
+
+      /* 1) relative */
+      /* position: relative;
+      top: 100px;
+      margin: 0 auto; */
+
+      /* 2) absolute */
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .history {
+      background-color: #aeaeae;
+      padding: 100px 20px 40px;
+    }
+    .history > h4 {
+      text-align: center;
+    }
+
+    .nav-container {
+      display: flex;
+      /* justify-content: space-between; */
+      align-items: center;
+      padding: 10px;
+      height: 40px;
+    }
+    .menu {
+      display: flex;
+      list-style: none;
+      
+      column-gap: 10px;
+    }
+    /* 메뉴 항목 사이에 간격을 넣는 방법(2가지)
+      1) margin
+      2) gap (in Flexbox)
+    */
+    /* .menu-item + .menu-item {
+      margin-left: 10px;
+    } */
+  </style>
+</head>
+<body>
+  <nav class="nav-container">
+    <h1>Shoes Shop</h1>
+    <!-- 로고와 메뉴 사이를 띄우는 방법(2가지)
+      1) justify-dontent: space-between;
+      2) flex-grow 혹은 flex: 1;
+    -->
+    <div style="flex: 1;"></div>
+    <ul class="menu">
+      <li class="menu-item">Products</li>
+      <li class="menu-item">Services</li>
+    </ul>
+  </nav>
+
+  <div class="main-background">
+    <h4 class="main-title">Buy our excellent shoes!</h4>
+    <p class="main-content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, voluptatem sapiente atque magni voluptatum veritatis, officiis corrupti itaque sequi nisi ducimus ipsa, deserunt ut doloremque possimus animi ratione. Doloremque, recusandae.
+    </p>
+    <button type="button" class="main-button">Buy Now</button>
+    
+    <!-- 부모 width의 80%만 차지하다가 넓어지면 최대 700px 까지만 늘어나도록 -->
+    <div class="sub-description">
+      <h4>How we design our shoes</h4>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.<br>
+        Perferendis mollitia voluptatum delectus dolorem.<br>
+        Adipisci ducimus itaque dolorem similique quae sint possimus!<br>
+      </p>
+    </div>
+
+    <!-- <div style="background-color: aqua;">test</div> -->
+  </div>
+
+  <div class="history">
+    <h4>Our best shoes & History</h4>
+    <ul>
+      <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, minima non ut blanditiis, mollitia veniam excepturi quia corporis provident quibusdam fuga odit modi repellat voluptas saepe libero quam, praesentium nihil?</li>
+      <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum accusamus molestiae possimus distinctio cupiditate culpa, aut velit commodi et! Rerum est, ad repellendus vero distinctio ab modi dicta officia voluptates?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, molestias et soluta at atque officia perferendis voluptates ipsa, animi optio dolor ex aperiam asperiores quasi quis, iste velit. Omnis, veniam?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eos ipsam facilis error dolorum quidem sunt exercitationem, iure atque quis reprehenderit sapiente esse similique tenetur a harum. Cumque, veritatis id!</li>
+      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum qui nobis beatae fugiat quam dolorem blanditiis?</li>
+    </ul>
+  </div>
+</body>
+</html>
