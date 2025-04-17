@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- Google Material -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <style>
+    * {
+      /* border: 1px solid gray; */
+      /* min-height: 20px; */
+    }
+
+    /* 공통속성 */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* 스타일 */
+    .container {
+      background-color: skyblue;
+      width: 100%;
+      padding: 50px 0;
+    }
+
+    .login-box {
+      background-color: #fff;
+      width: 80%;
+      max-width: 330px;
+      margin: 0 auto;
+      padding: 50px 30px;
+      border-radius: 20px;
+    }
+    .login-box div + div {
+      margin-top: 50px;
+    }
+
+    .input-box, .btn-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      display: flex;
+      padding: 0 10px;
+      align-items: center;
+    }
+    label span {
+      flex: 1;
+      text-align: center;
+    }
+    
+    .input-box label {
+      display: flex;
+    }
+    .input-box input {
+      flex: 5;
+      width: 80%;
+      margin-left: 10px;
+      padding: 5px;
+      border: 2px solid lightblue;
+      border-radius: 7px;
+      cursor: auto;
+      outline: none;
+    }
+    .input-box input:focus {
+      border: 2px solid navy;
+    }
+    .input-box label {
+      position: relative;
+    }
+    .input-box .icon-visibility {
+      position: absolute;
+      right: 20px;
+      font-size: 120%;
+    }
+    .input-box .material-symbols-outlined {
+      color: gray;
+    }
+
+    .btn-box .btn {
+      background-color: tomato;
+      padding: 10px 0;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer
+    }
+    .btn-box .btn:hover {
+      background-color: brown;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <div class="input-box">
+        <label for="input-id">
+          <span class="material-symbols-outlined">person</span>
+          <input type="text" id="input-id">
+          <span class="material-symbols-outlined icon-visibility">visibility</span>
+        </label>
+        <label for="input-pw">
+          <span class="material-symbols-outlined">key</span>
+          <input type="password" id="input-pw">
+        </label>
+      </div>
+      <div class="btn-box">
+        <button type="button" class="btn">로그인</button>
+        <button type="button" class="btn">회원가입</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
