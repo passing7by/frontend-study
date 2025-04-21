@@ -1,0 +1,54 @@
+body * {
+  /* border: 1px solid gray; */
+}
+
+/* COMMON */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem; /* 폰트 크기 baseline */
+  line-height: 1.5; 
+  color: #212529;
+  overflow-x: hidden;
+}
+
+/* 영문에만 적용할 폰트 */
+.font-en {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #212529;
+}
+
+.inner {
+  max-width: 71.25rem;
+  margin: 0 auto;
+}
+
+/* HEADER */
+#header {
+  /* border-bottom: 2px solid gray; */
+  box-shadow: 0 2px 8px hsla(0,0%,80%,.8);
+}
+#header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+}
+#header .inner img{
+  display: block;
+  width: 2.8rem;
+}
+#header .inner ul{
+  display: flex;
+}
+#header .inner ul a {
+  padding: 0 1rem;
+  font-weight: 700;
+}

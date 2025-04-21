@@ -159,8 +159,30 @@
   <hr>
 
   <!-- 범위 선택(기본값: 0~100) -->
-  <label for="volume">음량(0~10):</label>
-  <input type="range" id="volume" min="0" max="10" step="2">
+  <label for="volume">음량(0~50):</label>
+  <input type="range" id="volume" min="0" max="50" step="2">
+  <span id="volumeValue"></span>
+
+  <script>
+    const volInput = document.querySelector('#volume');
+    // console.log(volInput);
+    // console.log(volInput.value);
+    const volValSpan = document.querySelector('#volumeValue');
+    // console.log(volValSpan);
+    // console.log(volValSpan.textContent);
+
+    // 음량 초기값 설정
+    volInput.value = 0;
+    
+    // 음량 초기값 표시
+    volValSpan.textContent = volInput.value;
+
+    // 음량 변화시 표시
+    volInput.addEventListener('input', function () {
+      console.log('input 이벤트 발생');
+      volValSpan.textContent = volInput.value;
+    })
+  </script>
 
   <hr>
 

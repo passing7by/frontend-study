@@ -26,6 +26,15 @@ boxEl.addEventListener('click', function () {
   hasActive = boxEl.classList.contains('active'); // 요소에 active라는 클래스 값이 있는지 확인
   console.log(hasActive);
   // 출력: false
+
+  // 토글하기
+  // if (boxEl.classList.contains('on')) {
+  //   boxEl.classList.remove('on');
+  // } else {
+  //   boxEl.classList.add('on');
+  // }
+
+  boxEl.classList.toggle('on'); // 위의 코드 네 줄과 같은 기능을 수행
 });
 // 활용 예: active라는 클래스에 미리 스타일을 지정하고 클릭한 특정 요소에 스타일을 적용할 때
 

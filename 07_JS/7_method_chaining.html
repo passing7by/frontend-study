@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 메소드 체이닝: 여러 메소드를 이어서 작성
+    const str = 'He-llo-nongdam-gom';
+
+    // 메소드 체이닝을 안쓰면
+    const arr = str.split('');
+    console.log(arr);
+    const revArr = arr.reverse();
+    console.log(revArr);
+    const revStr1 = revArr.join('');
+    console.log(revStr1);
+    
+    const revStr2 = str.split('').reverse().join('');
+    console.log(revStr2);
+    
+    
+  </script>
+</body>
+</html>
