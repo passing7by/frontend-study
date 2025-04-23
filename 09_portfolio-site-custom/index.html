@@ -25,6 +25,9 @@
   <!--ScrollMagic -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
+  <!-- md-block -->
+  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
   <script defer src="./js/main.js"></script>
 </head>
 <body>
@@ -41,19 +44,16 @@
       <nav>
         <ul>
           <li>
-            <a href="#">About me</a>
+            <a href="#about">About me</a>
           </li>
           <li>
-            <a href="#">Skills</a>
+            <a href="#skills">Skills</a>
           </li>
           <li>
-            <a href="#">Archiving</a>
+            <a href="#archiving">Archiving</a>
           </li>
           <li>
-            <a href="#">Projects</a>
-          </li>
-          <li>
-            <a href="#">Career</a>
+            <a href="#projects">Projects</a>
           </li>
         </ul>
       </nav>
@@ -85,6 +85,7 @@
   <section id="about" class="about scroll-spy">
     <div class="inner">
       <h2 class="title">ABOUT ME</h2>
+      <div class="line"></div>
       <div class="about__wrapper">
           <div class="about__item">
             <img src="./images/icon_person.svg" alt="사람 아이콘">
@@ -135,7 +136,8 @@
   <!-- SKILLS -->
   <section id="skills" class="skills scroll-spy">
     <div class="inner">
-      <div class="title">SKILLS</div>
+      <h2 class="title">SKILLS</h2>
+      <div class="line"></div>
       <div class="skills__wrapper">
         <div class="skills__content">
           <div class="skills__name">
@@ -187,5 +189,146 @@
       </div>
     </div>
   </section>
+
+  <!-- ARCHIVING -->
+  <section id="archiving" class="archiving scroll-spy">
+    <div class="inner">
+      <h2 class="title">ARCHIVING</h2>
+      <div class="line"></div>
+        <div class="archiving__wrapper">
+          <div class="archiving__box">
+            <img src="./images/badge_github.png" alt="">
+            <a href="">깃허브 주소</a>
+            <p>간단한 설명</p>
+          </div>
+          <div class="archiving__box">
+            <img src="./images/badge_velog.svg" alt="">
+            <a href="">블로그 주소</a>
+            <p>간단한 설명</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects scroll-spy">
+    <div class="inner">
+      <h2 class="title">PROJECTS</h2>
+      <div class="line"></div>
+      <div class="projects__wrapper">
+        <!-- TODO: class="projects__box" 안의 리드미 링크 href 모두 "javascript:void(0)"로 변경 후,
+            모달 버튼 동작 작업 & 모달 바디에 readme 파일 뜰 수 있도록 하는 작업 진행해야 함
+        -->
+        <div class="projects__box">
+          <h3>react-bulk-form</h3>
+          <p>2025.03</p>
+          <hr>
+          <h4>Form 상태의 일괄 관리를 위한 간단한 React 라이브러리</h4>
+          <ul>
+            <li>Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 관리Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 </li>
+            <li>Form 또는 필드 단위의 상태 추적</li>
+            <li>Form 상태에 따른 UX 구현을 배제하여 부가적인 인터페이스 최소화</li>
+          </ul>
+          <a class="projects__link" href="https://www.npmjs.com/package/react-bulk-form">https://www.npmjs.com/package/react-bulk-form</a>
+          <div>TypeScript, React</div>
+          <a class="projects__readme" href="javascript:void(0)">
+            <img src="./images/icon_book.svg" alt="">
+            README
+          </a>
+        </div>
+        <div class="projects__box">
+          <h3>react-bulk-form</h3>
+          <p>2025.03</p>
+          <hr>
+          <h4>Form 상태의 일괄 관리를 위한 간단한 React 라이브러리</h4>
+          <ul>
+            <li>Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 관리Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 </li>
+            <li>Form 또는 필드 단위의 상태 추적</li>
+            <li>Form 상태에 따른 UX 구현을 배제하여 부가적인 인터페이스 최소화</li>
+          </ul>
+          <a class="projects__link" href="https://www.npmjs.com/package/react-bulk-form">https://www.npmjs.com/package/react-bulk-form</a>
+          <div>TypeScript, React</div>
+          <a class="projects__readme" href="./files/README.md">
+            <img src="./images/icon_book.svg" alt="">
+            README
+          </a>
+        </div>
+        <div class="projects__box">
+          <h3>react-bulk-form</h3>
+          <p>2025.03</p>
+          <hr>
+          <h4>Form 상태의 일괄 관리를 위한 간단한 React 라이브러리</h4>
+          <ul>
+            <li>Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 관리Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 </li>
+            <li>Form 또는 필드 단위의 상태 추적</li>
+            <li>Form 상태에 따른 UX 구현을 배제하여 부가적인 인터페이스 최소화</li>
+          </ul>
+          <a class="projects__link" href="https://www.npmjs.com/package/react-bulk-form">https://www.npmjs.com/package/react-bulk-form</a>
+          <div>TypeScript, React</div>
+          <a class="projects__readme" href="./files/README.md">
+            <img src="./images/icon_book.svg" alt="">
+            README
+          </a>
+        </div>
+        <div class="projects__box">
+          <h3>react-bulk-form</h3>
+          <p>2025.03</p>
+          <hr>
+          <h4>Form 상태의 일괄 관리를 위한 간단한 React 라이브러리</h4>
+          <ul>
+            <li>Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 관리Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 </li>
+            <li>Form 또는 필드 단위의 상태 추적</li>
+            <li>Form 상태에 따른 UX 구현을 배제하여 부가적인 인터페이스 최소화</li>
+          </ul>
+          <a class="projects__link" href="https://www.npmjs.com/package/react-bulk-form">https://www.npmjs.com/package/react-bulk-form</a>
+          <div>TypeScript, React</div>
+          <a class="projects__readme" href="javascript:void(0)">
+            <img src="./images/icon_book.svg" alt="">
+            README
+          </a>
+        </div>
+        <div class="projects__box">
+          <h3>react-bulk-form</h3>
+          <p>2025.03</p>
+          <hr>
+          <h4>Form 상태의 일괄 관리를 위한 간단한 React 라이브러리</h4>
+          <ul>
+            <li>Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 관리Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 </li>
+            <li>Form 또는 필드 단위의 상태 추적</li>
+            <li>Form 상태에 따른 UX 구현을 배제하여 부가적인 인터페이스 최소화</li>
+          </ul>
+          <a class="projects__link" href="https://www.npmjs.com/package/react-bulk-form">https://www.npmjs.com/package/react-bulk-form</a>
+          <div>TypeScript, React</div>
+          <a class="projects__readme" href="./files/README.md">
+            <img src="./images/icon_book.svg" alt="">
+            README
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="inner">
+      <p class="copyright">
+      &copy;<span></span>. Kim Ji Nam. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="readmeModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p>README.md</p>
+        <div><span class="material-symbols-outlined btn-close">close</span></div>
+      </div>
+      <div class="modal-body">
+        안녕하세요ddddddd
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
