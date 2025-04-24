@@ -14,11 +14,17 @@
   <!-- 구글 웹폰트 -->
   <!-- 한글: Noto Sans Korean, Black Han Sans 영문: Open Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
   <!-- 구글 머티리얼 아이콘 -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- github-markdown-light 테마 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css" integrity="sha512-BrOPA520KmDMqieeM7XFe6a3u3Sb3F1JBaQnrIAmWg3EYrciJ+Qqe6ZcKCdfPv26rGcgTrJnZ/IdQEct8h3Zhw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- prism code theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hi098123/prism-for-tistory/prism.css">
 
   <link rel="stylesheet" href="./css/main.css">
   
@@ -27,6 +33,9 @@
   
   <!-- md-block -->
   <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
+  <!-- prism -->
+  <script src="https://cdn.jsdelivr.net/gh/hi098123/prism-for-tistory/prism.js"></script>
 
   <script defer src="./js/main.js"></script>
 </head>
@@ -216,9 +225,6 @@
       <h2 class="title">PROJECTS</h2>
       <div class="line"></div>
       <div class="projects__wrapper">
-        <!-- TODO: class="projects__box" 안의 리드미 링크 href 모두 "javascript:void(0)"로 변경 후,
-            모달 버튼 동작 작업 & 모달 바디에 readme 파일 뜰 수 있도록 하는 작업 진행해야 함
-        -->
         <div class="projects__box">
           <h3>react-bulk-form</h3>
           <p>2025.03</p>
@@ -232,40 +238,6 @@
           <a class="projects__link" href="https://www.npmjs.com/package/react-bulk-form">https://www.npmjs.com/package/react-bulk-form</a>
           <div>TypeScript, React</div>
           <a class="projects__readme" href="javascript:void(0)">
-            <img src="./images/icon_book.svg" alt="">
-            README
-          </a>
-        </div>
-        <div class="projects__box">
-          <h3>react-bulk-form</h3>
-          <p>2025.03</p>
-          <hr>
-          <h4>Form 상태의 일괄 관리를 위한 간단한 React 라이브러리</h4>
-          <ul>
-            <li>Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 관리Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 </li>
-            <li>Form 또는 필드 단위의 상태 추적</li>
-            <li>Form 상태에 따른 UX 구현을 배제하여 부가적인 인터페이스 최소화</li>
-          </ul>
-          <a class="projects__link" href="https://www.npmjs.com/package/react-bulk-form">https://www.npmjs.com/package/react-bulk-form</a>
-          <div>TypeScript, React</div>
-          <a class="projects__readme" href="./files/README.md">
-            <img src="./images/icon_book.svg" alt="">
-            README
-          </a>
-        </div>
-        <div class="projects__box">
-          <h3>react-bulk-form</h3>
-          <p>2025.03</p>
-          <hr>
-          <h4>Form 상태의 일괄 관리를 위한 간단한 React 라이브러리</h4>
-          <ul>
-            <li>Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 관리Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 </li>
-            <li>Form 또는 필드 단위의 상태 추적</li>
-            <li>Form 상태에 따른 UX 구현을 배제하여 부가적인 인터페이스 최소화</li>
-          </ul>
-          <a class="projects__link" href="https://www.npmjs.com/package/react-bulk-form">https://www.npmjs.com/package/react-bulk-form</a>
-          <div>TypeScript, React</div>
-          <a class="projects__readme" href="./files/README.md">
             <img src="./images/icon_book.svg" alt="">
             README
           </a>
@@ -299,7 +271,41 @@
           </ul>
           <a class="projects__link" href="https://www.npmjs.com/package/react-bulk-form">https://www.npmjs.com/package/react-bulk-form</a>
           <div>TypeScript, React</div>
-          <a class="projects__readme" href="./files/README.md">
+          <a class="projects__readme" href="javascript:void(0)">
+            <img src="./images/icon_book.svg" alt="">
+            README
+          </a>
+        </div>
+        <div class="projects__box">
+          <h3>react-bulk-form</h3>
+          <p>2025.03</p>
+          <hr>
+          <h4>Form 상태의 일괄 관리를 위한 간단한 React 라이브러리</h4>
+          <ul>
+            <li>Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 관리Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 </li>
+            <li>Form 또는 필드 단위의 상태 추적</li>
+            <li>Form 상태에 따른 UX 구현을 배제하여 부가적인 인터페이스 최소화</li>
+          </ul>
+          <a class="projects__link" href="https://www.npmjs.com/package/react-bulk-form">https://www.npmjs.com/package/react-bulk-form</a>
+          <div>TypeScript, React</div>
+          <a class="projects__readme" href="javascript:void(0)">
+            <img src="./images/icon_book.svg" alt="">
+            README
+          </a>
+        </div>
+        <div class="projects__box">
+          <h3>react-bulk-form</h3>
+          <p>2025.03</p>
+          <hr>
+          <h4>Form 상태의 일괄 관리를 위한 간단한 React 라이브러리</h4>
+          <ul>
+            <li>Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 관리Form 필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄  필드 값과 오류(정적 규칙 기반의 검증 결과)의 일괄 </li>
+            <li>Form 또는 필드 단위의 상태 추적</li>
+            <li>Form 상태에 따른 UX 구현을 배제하여 부가적인 인터페이스 최소화</li>
+          </ul>
+          <a class="projects__link" href="https://www.npmjs.com/package/react-bulk-form">https://www.npmjs.com/package/react-bulk-form</a>
+          <div>TypeScript, React</div>
+          <a class="projects__readme" href="javascript:void(0)">
             <img src="./images/icon_book.svg" alt="">
             README
           </a>
@@ -317,15 +323,25 @@
     </div>
   </footer>
 
+  <!-- SCROLL UP -->
+  <a id="scroll-up" href="#" >
+    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+  </a>
+
   <!-- MODAL -->
   <div id="readmeModal">
     <div class="modal-content">
       <div class="modal-header">
         <p>README.md</p>
-        <div><span class="material-symbols-outlined btn-close">close</span></div>
+        <span class="material-symbols-outlined btn-close">close</span>
       </div>
       <div class="modal-body">
-        안녕하세요ddddddd
+        <div class="markdown-body">
+          <md-block class="md-block" src="./files/README.md">
+            <!-- README.md 로드 실패시 보이는 문구 -->
+            `README.md` 파일을 찾지 못했습니다.
+          </md-block>
+        </div>
       </div>
     </div>
 

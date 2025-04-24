@@ -13,11 +13,50 @@ spyEls.forEach(function (spyEl) {
   .addTo(controller); // 컨트롤러에 장면을 할당(필수!!) - 라이브러리에서 지정한 문법 깊게 이해할 필요x
   });
 
-const modalCloseBtn = document.querySelector('.btn-close');
-const modalBtn = document.querySelector('.btn-close');
+// 모달 버튼 제어
+const rmModalBtnList = document.querySelectorAll('.projects .projects__readme');
+const rmModal = document.querySelector('#readmeModal');
+const rmModalCloseBtn = document.querySelector('#readmeModal .btn-close');
 
-const modal = document.querySelector('#readmeModal');
+rmModalCloseBtn.addEventListener('click', function () {
+  rmModal.style.display = 'none';
+});
 
-modalCloseBtn.addEventListener('click', function () {
-  modal.style.display = 'flex';
-})
+rmModalBtnList.forEach(function (rmModalBtn, index) {
+  rmModalBtn.addEventListener('click', function () {
+    rmModal.style.display = 'flex';
+  });
+});
+
+// 화면 스크롤 이벤트 감지하여 헤더 스타일 & 스크롤업 버튼 변화
+const headerBg = document.querySelector('#header');
+const headerLis = document.querySelectorAll('#header .inner nav ul li a');
+const scrollUpBtn = document.querySelector('#scroll-up');
+console.log(scrollUpBtn);
+
+
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 50) {
+    headerBg.style.backgroundColor = '#fff';
+    
+    headerLis.forEach((headerLi) => {
+      headerLi.style.color = '#362d2a';
+    });
+  } else {
+    headerBg.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    headerBg.style.boxShadow = '0 2px 8px rgba(255, 255, 255, 0)';
+    
+    headerLis.forEach((headerLi) => {
+      headerLi.style.color = 'rgba(255, 255, 255, 0.81)';
+    });
+  } 
+
+  if (window.scrollY >= 500) {
+    scrollUpBtn.style.opacity = 1;
+    scrollUpBtn.style.transform = 'translateX(0)';   
+  } else {
+    scrollUpBtn.style.opacity = 0;
+    scrollUpBtn.style.transform = 'translateX(100px)'; 
+  }
+});
