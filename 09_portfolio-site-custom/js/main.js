@@ -13,45 +13,57 @@ spyEls.forEach(function (spyEl) {
   .addTo(controller); // 컨트롤러에 장면을 할당(필수!!) - 라이브러리에서 지정한 문법 깊게 이해할 필요x
   });
 
-// 모달 버튼 제어
+// 모달 제어
 const rmModalBtnList = document.querySelectorAll('.projects .projects__readme');
 const rmModal = document.querySelector('#readmeModal');
 const rmModalCloseBtn = document.querySelector('#readmeModal .btn-close');
+const body = document.querySelector('body');
+
+const scrollBarWidth = window.innerWidth - document.documentElement.offsetWidth;
+const scrollBarWidthStr = scrollBarWidth.toString();
 
 rmModalCloseBtn.addEventListener('click', function () {
   rmModal.style.display = 'none';
+  body.style.overflow = 'auto';
+  body.style.paddingRight = 0;
 });
+console.log(body);
 
 rmModalBtnList.forEach(function (rmModalBtn, index) {
   rmModalBtn.addEventListener('click', function () {
     rmModal.style.display = 'flex';
+    body.style.overflow = 'hidden';
+    body.style.paddingRight = scrollBarWidthStr+'px';
   });
 });
 
 // 화면 스크롤 이벤트 감지하여 헤더 스타일 & 스크롤업 버튼 변화
-const headerBg = document.querySelector('#header');
-const headerLis = document.querySelectorAll('#header .inner nav ul li a');
+const header = document.querySelector('#header');
+const headerAs = document.querySelectorAll('#header .inner nav ul li a');
 const scrollUpBtn = document.querySelector('#scroll-up');
-console.log(scrollUpBtn);
 
-
+// 헤더 백그라운드 컬러 초기값 지정 (투명)
+header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
 
 window.addEventListener('scroll', function () {
+  // 스크롤 이벤트 1: 헤더 스타일 변경
   if (window.scrollY > 50) {
-    headerBg.style.backgroundColor = '#fff';
-    
-    headerLis.forEach((headerLi) => {
-      headerLi.style.color = '#362d2a';
+    header.style.backgroundColor = '#fff';
+    header.style.boxShadow = '0 2px 8px rgba(119, 119, 119, 0.4)';
+
+    headerAs.forEach((headerA) => {
+      headerA.style.color = '#362d2a';
     });
   } else {
-    headerBg.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-    headerBg.style.boxShadow = '0 2px 8px rgba(255, 255, 255, 0)';
+    header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    header.style.boxShadow = '0 0 0 rgba(0, 0, 0, 0)';
     
-    headerLis.forEach((headerLi) => {
-      headerLi.style.color = 'rgba(255, 255, 255, 0.81)';
+    headerAs.forEach((headerA) => {
+      headerA.style.color = 'rgba(255, 255, 255, 0.81)';
     });
   } 
 
+  // 스크롤 이벤트 2: 스크롤업 버튼 사라짐/나타남
   if (window.scrollY >= 500) {
     scrollUpBtn.style.opacity = 1;
     scrollUpBtn.style.transform = 'translateX(0)';   
@@ -60,3 +72,36 @@ window.addEventListener('scroll', function () {
     scrollUpBtn.style.transform = 'translateX(100px)'; 
   }
 });
+
+// 햄버거 버튼 클릭 시 효과
+const hamburgerBtn = document.querySelector('.hamburgerBtn');
+
+hamburgerBtn.addEventListener('click', function () {
+  headerAs.forEach((headerA) => {
+    headerA.style.color = '#362d2a';
+  })
+
+  header.classList.toggle('active');
+
+  if(header.classList.contains('active')){
+    header.style.backgroundColor = '#fff';
+    header.style.boxShadow = '0 2px 8px rgba(119, 119, 119, 0.4)';
+
+    body.style.overflow = 'hidden';
+    body.style.paddingRight = scrollBarWidthStr+'px';
+  } else {
+    header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    header.style.boxShadow = '0 0 0 rgba(255, 255, 255, 0)';
+
+    body.style.overflow = 'auto';
+    body.style.paddingRight = 0;
+  }
+});
+
+// 메뉴 클릭 시 메뉴 창 다시 닫히게
+headerAs.forEach((headerA) => {
+  headerA.addEventListener('click', function () {
+    header.classList.toggle('active');
+    body.style.overflow = 'auto';
+  })
+})

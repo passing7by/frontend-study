@@ -17,6 +17,7 @@ body {
   line-height: 1.5; 
   color: #212529;
   overflow-x: hidden;
+  padding-right: 0;
 }
 
 /* 영문에만 적용할 폰트 */
@@ -69,9 +70,9 @@ section {
 #header {
   position: fixed;
   width: 100vw;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(119, 119, 119, 0.4);
+  height: 5rem;
   z-index: 10;
+  transition: 1s;
 }
 #header .inner {
   display: flex;
@@ -90,7 +91,56 @@ section {
 #header .inner ul a {
   padding: 0 1rem;
   font-weight: 700;
-  color: #362d2a;
+  color: rgba(255, 255, 255, 0.81);
+}
+#header .inner ul li:hover {
+  animation: jump 0.3s cubic-bezier(0, 0, 0.18, 0.99) infinite alternate;
+}
+#header .hamburgerBtn {
+  width: 3rem;
+  height: 2rem;
+  position: relative;
+  display: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#header .hamburgerBtn div {
+  background-color: #d6522eda;
+  width: 100%;
+  height: 0.5rem;
+  position: absolute;
+  border-radius: 1rem;
+  transition: 0.5s;
+}
+#header .hamburgerBtn:hover div {
+  background-color: #d6532e;
+}
+#header .hamburgerBtn:hover {
+  transform: scale(1.1);
+}
+#header .hamburgerBtn div:nth-child(1) {
+  top: 0;
+  transform-origin: 25% 50%;
+}
+#header .hamburgerBtn div:nth-child(2) {
+  top: calc(50% - 0.25rem);
+  transform-origin: 25% 50%;
+}
+#header .hamburgerBtn div:nth-child(3) {
+  bottom: 0;
+  transform-origin: 25% 50%;
+}
+#header.active .hamburgerBtn div {
+  background-color: #d6532e;
+}
+#header.active .hamburgerBtn div:nth-child(1) {
+  transform: rotate(45deg) translateX(10%);
+}
+#header.active .hamburgerBtn div:nth-child(2) {
+  opacity: 0;
+}
+#header.active .hamburgerBtn div:nth-child(3) {
+  transform: rotate(-45deg) translateX(10%);
 }
 
 /* VISUAL */
@@ -126,6 +176,12 @@ section {
   font-weight: 400;
   opacity: 0.999;
   line-height: 1.25;
+}
+.visual .inner h1 .visual__title-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 1.5rem;
 }
 .visual .inner h2 {
   margin: 0 auto 3rem;
@@ -256,7 +312,9 @@ section {
 }
 .archiving .archiving__wrapper{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 2rem;
   column-gap: 2rem;
 }
 .archiving .archiving__wrapper .archiving__box {
@@ -392,7 +450,7 @@ footer .copyright {
   width: 4rem;
   height: 4rem;
   bottom: 3rem;
-  right: 5%;
+  right: 3rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -459,18 +517,79 @@ footer .copyright {
   padding: 0 1rem;
 }
 
-/* TODO: 반응형 작업 하기 */
+@media screen and (max-width:767px) {
+  #header {  
+    transition: 1s;
+  }
+  #header.active {
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  #header .inner ul{
+    display: none;
+  }
+  #header.active .inner ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    top:5.3rem;
+    right: 2rem;
+  }
+  #header.active .inner ul li{
+    font-size: 1.8rem;
+    line-height: 3.4rem;
+    transition: 0.5s;
+  }
+  #header .hamburgerBtn {
+    display: flex;
+    position: relative; 
+  }
+  
+  .visual .inner h1 {
+    font-size: 3rem;
+  }
+
+  .skills .skills__wrapper .skills__content {
+    flex-direction: column;
+    row-gap: 2.2rem;
+  }
+  .skills .skills__wrapper .skills__content .skills__name {
+    margin: 0 auto;
+  }
+  .skills .skills__wrapper .skills__content ul {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .projects .projects__wrapper {
+    flex-direction: column;
+  }
+  .projects .projects__wrapper .projects__box {
+    width: 100%;
+  }
+
+  #scroll-up {
+    bottom: 3rem;
+    right: 1.7rem;
+  }
+}
 
 @keyframes move-up {
-  /* 0% {transform: translateY(20px); opacity: 1;} */
   0% {transform: translateY(14px); opacity: 1;}
   50% {transform: translateY(-14px); opacity: 0}
   100% {transform: translateY(14px); opacity: 1}
 }
 @keyframes move-down {
-  /* 0% {transform: translateY(20px); opacity: 1;} */
   0% {transform: translateY(-10px); opacity: 1;}
   50% {transform: translateY(10px); opacity: 0}
   70% {transform: translateY(-10px); opacity: 1}
   100% {transform: translateY(0px); opacity: 1}
+}
+@keyframes jump {
+  0% {transform: translateY(0rem);}
+  100% {transform: translateY(-0.5rem);}
 }
