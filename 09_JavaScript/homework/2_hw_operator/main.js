@@ -1,3 +1,4 @@
+// 1. 구슬 놀이
 const btnAddBall = document.querySelector('.btn-addBall');
 const btOddOrEven = document.querySelector('.btn-oddOrEven');
 const btnCleanBall = document.querySelector('.btn-cleanBall');
@@ -23,4 +24,44 @@ btOddOrEven.addEventListener('click', () => {
 
 btnCleanBall.addEventListener('click', () => {
   ballWrapper.textContent = '';
+});
+
+// 2. 계산기
+const inputFirstNum = document.querySelector('.input-firstNum');
+const inputSecondNum = document.querySelector('.input-secondNum');
+const btns = document.querySelectorAll('.btn');
+const spanCalResult = document.querySelector('.span-calResult');
+
+btns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const clickedOperator = btn.textContent;
+    const inputedFirstNum = Number(inputFirstNum.value);
+    const inputedSecondNum = Number(inputSecondNum.value);
+
+    switch (clickedOperator) {
+      case '+':
+        spanCalResult.textContent = inputedFirstNum + inputedSecondNum;
+        break;
+
+      case '-':
+        spanCalResult.textContent = inputedFirstNum - inputedSecondNum;
+        break;
+          
+      case 'X':
+        spanCalResult.textContent = inputedFirstNum * inputedSecondNum;
+        break;
+        
+      case '/':
+        spanCalResult.textContent = inputedFirstNum / inputedSecondNum;
+        break;
+        
+      default:
+        spanCalResult.textContent = inputedFirstNum % inputedSecondNum;
+        break;
+    }
+
+    // 계산 완료 후 input 안의 값 지우기
+    inputFirstNum.value = '';
+    inputSecondNum.value = '';
+  })
 });
