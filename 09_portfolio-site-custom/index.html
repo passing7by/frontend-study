@@ -3,6 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 오픈 그래프와 트위터 카드 설정(링크의 프리뷰) -->
+  <!-- 오픈 그래프 -->
+  <!-- 웹페이지가 소셜미디어(카카오톡, 슬랙, 페이스북 등)로 공유될 때 우선적으로 활용되는 정보 -->
+  <!-- 
+    type: 사이트 타입(website로 고정하면 됨)
+    site_name: 웹사이트 이름, 브랜드 네임을 쓰면 좋음(ex. Goni's Portfolio, Goni.dev, MyPortfolio)
+    title: 현재 페이지의 제목
+    description: 간단한 소개(검색, 공유 시 미리보기에서 사용)
+    image: 썸네일 이미지(가장 중요함!), 절대 경로로 작성하는 것을 권장(https://부터 시작), 권장 크기(1200x630px 정도)
+    url: 현재 사이트의 대표 URL
+  -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="jinam's Portfolio Exercise" />
+  <meta property="og:title" content="포트폴리오 | 김지남" />
+  <meta property="og:description" content="풀스택 개발자 포트폴리오입니다." />
+  <meta property="og:image" content="https://portfolio-exercise-kjn.netlify.app/images/logo.png" />
+  <meta property="og:url" content="https://portfolio-exercise-kjn.netlify.app/" />
+
+  <!-- 트위터 카드 -->
+  <!-- 웹페이지가 소셜미디어(트위터)로 공유될 때 우선적으로 활용되는 정보 -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <!-- 계정 태그 노출용 작성자 트위터 계정(없으면 생략 가능) -->
+  <!-- <meta name="twitter:site" content="@your_twitter_handle" /> 
+  <meta name="twitter:creator" content="@your_twitter_handle" /> -->
+  <meta property="twitter:title" content="포트폴리오 | 김지남" />
+  <meta property="twitter:description" content="풀스택 개발자 포트폴리오입니다." />
+  <meta property="twitter:image" content="https://portfolio-exercise-kjn.netlify.app/images/logo.png" />
+  <meta property="twitter:url" content="https://portfolio-exercise-kjn.netlify.app/" />
+  
   <title>포트폴리오 | 김지남</title>
 
   <!-- favicon -->
@@ -118,7 +148,7 @@
               <img src="./images/icon_location.svg" alt="위치 아이콘">
               <div class="about__info">
                 <h3>위치</h3>
-                <p>서울특별시 관악구</p>
+                <p>서울특별시 은평구</p>
               </div>
             </div>
             <div class="about__item">
@@ -146,7 +176,7 @@
               <img src="./images/icon_school.svg" alt="학교 아이콘">
               <div class="about__info">
                 <h3>학력</h3>
-                <p>농담곰대학교<br>(무슨무슨학부)</p>
+                <p>OO대학교<br>(OO학부)</p>
               </div>
             </div>
         </div>
@@ -161,49 +191,47 @@
         <div class="skills__wrapper">
           <div class="skills__content">
             <div class="skills__name">
-              <img src="./images/icon_person.svg" alt="기술 이름">
+              <img src="./images/icon_language.png" alt="기술 이름">
               <p>Language</p>
             </div>
             <ul>
-              <li>TypeScript</li>
-              <li>JavaScript</li>
-              <li>Python</li>
+              <li style="background-color: #5382a1;">Java</li>
+              <li style="background-color: #F7DF1E; color: #000000;">JavaScript</li>
             </ul>
           </div>
           <div class="skills__content">
             <div class="skills__name">
-              <img src="./images/icon_person.svg" alt="기술 이름">
-              <p>Language</p>
+              <img src="./images/icon_frontend.png" alt="기술 이름">
+              <p>Fontend</p>
             </div>
             <ul>
-              <li>TypeScript</li>
-              <li>JavaScript</li>
-              <li>Python</li>
-              <li>Python</li>
-              <li>Python</li>
-              <li>Python</li>
+              <li style="background-color: #61DAFB; color: #000000;">React</li>
+              <li style="background-color: #E34F26;">HTML5</li>
+              <li style="background-color: #1572B6;">CSS3</li>
+              <li style="background-color: #5A29E4;">Axios</li>
+              <li style="background-color: #0769AD">JQuery</li>
+              <li style="background-color: #DB7093">Styled-Components</li>
             </ul>
           </div>
           <div class="skills__content">
             <div class="skills__name">
-              <img src="./images/icon_person.svg" alt="기술 이름">
-              <p>Language</p>
+              <img src="./images/icon_backend.png" alt="기술 이름">
+              <p>Backend</p>
             </div>
             <ul>
-              <li>TypeScript</li>
-              <li>JavaScript</li>
-              <li>Python</li>
+              <li style="background-color: #6DB33F;">Spring</li>
+              <li style="background-color: #6DB33F;">Spring Boot</li>
+              <li style="background-color: #4479A1;">MySQL</li>
+              <li style="background-color: #6DB33F;">Spring Security</li>
             </ul>
           </div>
           <div class="skills__content">
             <div class="skills__name">
-              <img src="./images/icon_person.svg" alt="기술 이름">
-              <p>Language</p>
+              <img src="./images/icon_devdops.png" alt="기술 이름">
+              <p>DevOps</p>
             </div>
             <ul>
-              <li>TypeScript</li>
-              <li>JavaScript</li>
-              <li>Python</li>
+              <li style="background-color: #FF9900; color: #000000;">AWS</li>
             </ul>
           </div>
         </div>
@@ -218,13 +246,13 @@
           <div class="archiving__wrapper">
             <div class="archiving__box">
               <img src="./images/badge_github.png" alt="">
-              <a href="">깃허브 주소</a>
-              <p>간단한 설명</p>
+              <a href="https://github.com/passing7by">github.com/passing7by</a>
+              <p>소스 코드 저장소</p>
             </div>
             <div class="archiving__box">
               <img src="./images/badge_velog.svg" alt="">
-              <a href="">블로그 주소</a>
-              <p>간단한 설명</p>
+              <a href="https://velog.io/@passing7by/posts">velog.io/@passing7by/posts</a>
+              <p>공부 및 지식 공유 목적의 블로그</p>
             </div>
           </div>
       </div>
