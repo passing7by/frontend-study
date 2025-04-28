@@ -65,3 +65,13 @@ btns.forEach((btn) => {
     inputSecondNum.value = '';
   })
 });
+
+// 4. 문자 누적하기
+const inputWord = document.querySelector('.input-word');
+const btnAddWord = document.querySelector('.btn-addWord');
+const textareaResult = document.querySelector('.textarea-result');
+
+btnAddWord.addEventListener('click', () => {
+  textareaResult.textContent += inputWord.value;
+  inputWord.value = '';
+});
