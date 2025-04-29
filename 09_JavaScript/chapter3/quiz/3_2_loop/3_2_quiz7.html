@@ -32,18 +32,19 @@
     
     // 풀이7
     // 이중 for문 이용
-    // TODO: 밑의 코드 수정
-    let html = '<table border="1">';
-    for (let i = 1; i <= 5; i++) {
-      table    += '  <tr>';
-      for (let j = i; j <= i+4; j++) {
-        table    += `<td>${j}</td>`;
-      }
-      table    += '  </tr>';
-    }
-    document.write(table);
+    document.write('<hr>');
 
-    
+    let html = '<table border="1">';
+    let cnt = 1;
+    for (let i = 1; i <= 5; i++) {
+      html += '<tr>';
+      for (let j = 1; j <= 5; j++) {
+        html += `<td>${cnt}</td>`;
+        cnt++;
+      }
+      html += '</tr>';
+    }
+    document.write(html);
   </script>
 </head>
 <body>
