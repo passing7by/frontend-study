@@ -4,11 +4,15 @@ const imgGrow = document.querySelector('.img-grow');
 btnGrow.addEventListener('click', () => {
   console.log('width: '+imgGrow.width+' height: '+imgGrow.height);
 
-  nowWidth = imgGrow.width;
-  nowHeight = imgGrow.height;
+  const nowWidth = imgGrow.width;
+  const nowHeight = imgGrow.height;
 
+  // 방법1
   imgGrow.width = nowWidth + 100;
   imgGrow.height = nowHeight + 100;
+  // 방법2
+  // imgGrow.style.width = nowWidth + 100 + 'px';
+  // imgGrow.style.height = nowHeight + 100 + 'px';
   
   console.log('width: '+imgGrow.width+' height: '+imgGrow.height);
 })
@@ -21,8 +25,8 @@ const imgChange = document.querySelector('.img-change');
 btnChange.addEventListener('click', () => {
   console.log('width: '+imgChange.width+' height: '+imgChange.height);
   
-  nowWidth = imgChange.width;
-  nowHeight = imgChange.height;
+  const nowWidth = imgChange.width;
+  const nowHeight = imgChange.height;
 
   imgChange.width = nowWidth + Number(inputWidth.value);
   imgChange.height = nowHeight + Number(inputHeight.value);

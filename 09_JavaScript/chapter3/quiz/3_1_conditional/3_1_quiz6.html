@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 문제6
+    // switch문을 사용하여 과목을 입력 받고 과목에 따라 과목코드를 출력하세요.
+    // ('수학': '01', '영어': '02', '국어': '03', '국사': '04', 그 외: '00')
+    const subjectName = prompt('과목명을 입력해주세요~');
+    let subjectCode;
+
+    switch (subjectName) {
+      case '수학':
+      subjectCode = '01';
+        break;
+    
+      case '영어':
+      subjectCode = '02';
+        break;
+    
+      case '국어':
+      subjectCode = '03';
+        break;
+    
+      case '국사':
+      subjectCode = '04';
+        break;
+    
+      default:
+      subjectCode = '00';
+        break;
+    }
+
+    document.write(`${subjectName}의 과목코드는 ${subjectCode}입니다.`);
+
+    // 풀이6
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
