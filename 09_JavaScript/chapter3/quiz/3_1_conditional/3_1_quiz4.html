@@ -14,17 +14,22 @@
     // 함께 왔다면 확인(true)을 누르고 혼자 왔다면 취소(false)를 눌렀을때 다음과 같이 브라우저에 출력하세요.
     // 확인 입력시: 좋은 시간 보내렴~
     // 취소 입력시: 어른 모시고 다시 오렴~
-    let height = Number(prompt('놀이기구를 타기 위해서 키를 재 주세요~📏'));
+    const height = Number(prompt('놀이기구를 타기 위해서 키를 재 주세요~📏'));
+    let msg = '놀이기구 이용 가능🤖';
 
-    if (height >= 150) {
-      document.write('놀이기구 이용 가능🤖');
-    } else {
-      if (confirm('보호자와 같이 방문했나요?👩‍🏫')) {
-        document.write('신나게 놀이기구 탈 시간!!');
-      } else {
-        document.write('보호자와 같이 와주세요🥹');
-      }
+    if (height < 150) {
+      const temp = confirm('보호자와 같이 방문했나요?👩‍🏫');
+      // if (temp) {
+      //   msg ='신나게 놀이기구 탈 시간!!';
+      // } else {
+      //   msg = '보호자와 같이 와주세요🥹';
+      // }
+      
+      // 삼항연산자 사용 - 삼항연산자는 조건이 간단할 때만 사용하는 것이 좋음
+      msg = temp ? '신나게 놀이기구 탈 시간!!' : '보호자와 같이 와주세요🥹';
     }
+
+    document.write(msg);
 
     // 풀이4
     
