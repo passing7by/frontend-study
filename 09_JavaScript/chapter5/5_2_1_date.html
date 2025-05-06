@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 표준 빌트인(내장) 객체
+    // 자바스크립트 엔진에 내장되어 기본으로 제공되며 필요한 경우 생성하여 사용
+    // Object 객체는 모든 JS 객체의 최상위(루트) 객체
+    // 그 외에도 String, Number, Date, Array, Math 등 다양한 객체가 존재
+    // 참고: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects
+
+    // 1. Date 객체
+    // 날짜와 시간을 다루는 객체로 날짜와 시간에 대한 정보를 보여줌
+    // Date 객체 자체는 날짜 포맷을 직접 지정하는 기능은 제공하지 않음
+    // (Date 객체에서 날짜 정보를 꺼내서, 직접 문자열을 조합해서 원하는 포맷을 만들어야 함)
+    // 사용성이 떨어져서 복잡한 포맷이나 시간대 처리를 자주 한다면 날짜 관련 외부 라이브러리가 유용
+    // 참고: 외부 라이브러리
+    // dayjs (가볍고 심플)
+    // date-fns (함수 기반)
+    // luxon (시간대 지원 강력)
+    // moment.js (많이 쓰였지만 지금은 deprecated)
+    // 물론 이런 라이브러리들 내부는 Date 객체를 이용하여 만들어진 것들임
+    document.write('<h1>Date 객체</h1>');
+
+    // 1) Date() 생성자
+    // Date 객체 생성 4가지 방식
+    // 변수 = new Date();
+    
+
+    // 변수 = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+    // 이 때 month는 0부터 시작
+    
+
+    // 변수 = new Date(milliseconds);
+    const d2 = new Date(0); // 1970년 1월 1일
+    document.write(d2, '<br>');
+    const d3 = new Date(100000000000); // 1970년 1월 1일 + 100000000000ms = 대략 1973년 3월 3일
+    document.write(d3, '<br>');
+
+    // 변수 = new Date(date string);
+    // 날짜 문자열로 Date 객체 생성
+    const d4 = new Date('October 15, 2022 11:30:00');
+    document.write(d4, '<br>');
+    const d5 = new Date('2022-10-15T11:30:00');
+    document.write(d5, '<br>');
+
+    // 2) Get 함수
+    document.write('<h3>Get 함수</h3>');
+    // 오늘 날짜에 대한 정보를 가지고 있는 객체 생성
+    
+
+    // Quiz: 특정 날짜 정보를 갖는 객체 생성 후 정보 출력해보기
+    // 예: 2025년 12월 31일
+    
+
+    // 실습: 특정 날짜까지 D-day 구하기
+    
+    
+
+    // 3) Set 함수
+    document.write('<h3>Set 함수</h3>');
+    
+
+    // 날짜를 6개월 전으로 설정
+    
+
+    // 날짜를 지난 달의 마지막 날로 설정
+    
+  </script>
+</body>
+</html>
