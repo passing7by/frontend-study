@@ -30,11 +30,14 @@
     // 1) Date() 생성자
     // Date 객체 생성 4가지 방식
     // 변수 = new Date();
-    
+    const now = new Date(); // 현재 날짜와 시간을 가져옴
+    document.write(now, '<br>');
 
     // 변수 = new Date(year, month, day, hours, minutes, seconds, milliseconds);
-    // 이 때 month는 0부터 시작
-    
+    // 이 때 month는 0부터 시작 -> 진짜 불편하시다...
+    // 특정 날짜, 시간을 지정해서 dAte 객체 생성
+    const d1 = new Date(2025, 4, 8, 10, 33, 30, 0);
+    document.write(d1, '<br>');
 
     // 변수 = new Date(milliseconds);
     const d2 = new Date(0); // 1970년 1월 1일
@@ -52,25 +55,70 @@
     // 2) Get 함수
     document.write('<h3>Get 함수</h3>');
     // 오늘 날짜에 대한 정보를 가지고 있는 객체 생성
-    
+    const today = new Date();
+    const nowYear = today.getFullYear();
+    const nowMonth = today.getMonth();
+    const nowDate = today.getDate();
+    const nowDay = today.getDay();
+
+    document.write('<h4>오늘 날짜 정보</h4>');
+    document.write(`날짜 정보(기본 포맷): ${today}<br>`);
+    document.write(`연도: ${nowYear}<br>`);
+    document.write(`월: ${nowMonth}<br>`); // 0~11: 현재 월보다 1 적게 나옴
+    document.write(`일: ${nowDate}<br>`);
+    document.write(`요일: ${nowDay}<br>`); // 0~6: 일~토
+    document.write(`${nowYear}/${nowMonth+1}/${nowDate}`); // 내가 직접 포맷팅
+    document.write('<br>');
 
     // Quiz: 특정 날짜 정보를 갖는 객체 생성 후 정보 출력해보기
     // 예: 2025년 12월 31일
-    
+    const d6 = new Date();
+    d6.setMonth(11);
+    d6.setDate(31);
+    document.write(`${d6.getFullYear()}년 ${d6.getMonth()+1}월 ${d6.getDate()}일`); // 내가 직접 포맷팅
+
+    document.write('<br>');
 
     // 실습: 특정 날짜까지 D-day 구하기
-    
+    // 남은 일 수(밀리초) = 특정 날짜 객체 시간 - 현재 날짜 객체 시간
+    // 1초 = 1000ms
+    // 1분(60초) = 1000 * 60ms
+    // 1시간(60분) = 1000 * 60ms * 60ms
+    // 1일(24시간) = 1000 * 60ms * 60ms * 24ms
+    document.write('<h4>오늘부터 종강까지 남은 일 수</h4>');
+
+    const classEndDate = new Date(2025, 9, 24);
+    // const diffTime = classEndDate.getTime() - today.getTime();
+    const diffTime = classEndDate - today; // 윗줄의 코드와 결과 동일(내부적으로 시간으로 변환해서 동작)
+    // getTime(): 1970년 1월 1일 0시 0분 0초로부터 시작해서 지금까지 몇 ms가 지났는지
+    document.write(diffTime + 'ms');
+    document.write('<br>');
+    document.write(diffTime/(1000 * 60 * 60 * 24) + '일');
+    document.write('<br>');
+    const diffDate = Math.ceil(diffTime/(1000 * 60 * 60 * 24));
+    document.write('종강까지 ' + diffDate + '일 남았습니다.');
+
+
+
     
 
     // 3) Set 함수
     document.write('<h3>Set 함수</h3>');
-    
+    let d = new Date();
+    document.write(d, '<br>');
+    d.setFullYear(2020);
+    document.write(d, '<br>');
 
     // 날짜를 6개월 전으로 설정
-    
+    d = new Date();
+    d.setFullYear(d.getFullYear(), d.getMonth()-6);
+    document.write(d, '<br>');
 
     // 날짜를 지난 달의 마지막 날로 설정
-    
+    d = new Date();
+    d.setMonth(d.getMonth(), 0); // 0: 지난달 말일
+    document.write(d, '<br>');
+
   </script>
 </body>
 </html>

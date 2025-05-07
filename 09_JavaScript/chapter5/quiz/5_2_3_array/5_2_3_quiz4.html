@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 문제4
+    // 배열에서 최대값, 최소값 구하기(여러 가지 방법이 존재)
+    // 힌트: for문 또는 sort() 사용
+    const points = [40, 100, 1, 5, 25, 10];
+
+    // 풀이4
+    // for문 이용
+    // let min = 0;
+    // let max = 0;
+    let max = -Infinity;
+    let min = Infinity;
+    // for (let i = 0; i < points.length; i++) {
+    //   if (points[i] > max) max = points[i];
+    //   if (points[i] < min) min = points[i];
+    // }
+    for (const el of points){
+      if (el > max) max = el;
+      if (el < min) min = el;
+    }
+    console.log(min);
+    console.log(max);
+
+    // sort() 이용
+    points.sort((a, b) => { return a - b; })
+    // console.log(points);
+    console.log(points[0]);
+    console.log(points[points.length-1]);
+    
+    // (참고) ES6차 spread 연산자
+    // Math.min() 혹은 Math.max() 안에 배열을 통째로 넣으면 함수가 동작하지 않음 => spread 연산자를 사용하여 배열 안의 값들을 풀어서 넣으면 동작함
+    console.log(Math.min(points)); // NaN
+    console.log(Math.min(...points));
+    console.log(Math.max(...points));
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -18,7 +18,7 @@
   <!-- 1번 -->
   <h1>날씨 확인</h1>
   계절
-  <input type="radio" name="season" id="spring" value="봄">
+  <input type="radio" name="season" id="spring" value="봄" checked>
   <label for="spring">봄</label>
   <input type="radio" name="season" id="summer" value="여름">
   <label for="summer">여름</label>
@@ -34,7 +34,27 @@
 
   <script>
     // 1번
+    const inputSeasons = document.querySelectorAll('input[type=radio]');
+    const inputTemp = document.querySelector('input#temp');
     
+    function checkSeason() {
+      // 클릭한 후에 inputTemp에 입력된 값을 가져옴
+      const temp = Number(inputTemp.value);
+
+      // 어떤 계절이 체크됐는지 확인
+      inputSeasons.forEach((inputSeason) => {
+        const season = inputSeason.id;
+        const isChecked = inputSeason.checked;
+        if(isChecked && season === 'summer') {
+          if (temp >= 35) alert('폭염 경보');
+          else if (temp >= 33) alert('폭염 주의보');
+        }
+        else if(isChecked && season === 'winter') {
+          if (temp <= -15) alert('한파 경보');
+          else if (temp <= -12) alert('한파 주의보');
+        }
+      })
+    }
   </script>
 
   <!-- 2번 -->
@@ -48,7 +68,20 @@
 
   <script>
     // 2번
-    
+    const charSelectOptions = document.querySelectorAll('#charSelect option');    
+    const charImg = document.querySelector('#charImg');
+
+    function changeCharacter() {
+      charSelectOptions.forEach((charSelectOption) => {
+        if(charSelectOption.selected){
+          switch (Number(charSelectOption.value)) {
+            case 1: charImg.src = 'images/sponge.png'; break;
+            case 2: charImg.src = 'images/dung.png'; break;
+            case 3: charImg.src = 'images/human.png'; break;
+          }
+        }  
+      })
+    }
   </script>
 </body>
 </html>

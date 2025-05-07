@@ -14,11 +14,19 @@
   <button type="button" class="btn-order">주문</button>
   <div class="combo-list">
     <!-- 콤보 세트 이미지가 들어갈 자리 -->
+
   </div>
 
   <script>
     // 1번
-    
+    const inputSetCnt = document.querySelector('#setCnt');
+    const divComboList = document.querySelector('.combo-list');
+    const btnOrder = document.querySelector('.btn-order');
+
+    btnOrder.addEventListener('click', () => {
+      const setCnt = Number(inputSetCnt.value);
+      for (let i = 1; i <= setCnt; i++) divComboList.innerHTML += '<div><img src="./images/popcorn.png" alt=""><img src="./images/coke.png" alt=""><img src="./images/coke.png" alt=""></div>'
+    })
   </script>
 
   <!-- 2번 -->
@@ -26,11 +34,44 @@
   <button type="button" onclick="createTable()">테이블 생성</button>
   <div class="table-area">
     <!-- 표가 들어갈 자리 -->
+    <!-- <table>  
+     <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+    </table> -->
   </div>
 
   <script>
     // 2번
-    
+    const divTableArea = document.querySelector('.table-area');
+    function createTable() {
+      const rowNum = Number(prompt('테이블 행의 갯수는?'));
+      const columnNum = Number(prompt('테이블 열의 갯수는?'));
+
+      let tableData = 1;
+
+      let tableInnerHtml = '';
+
+      tableInnerHtml += `<table>`;
+      for (let i = 1; i <= rowNum; i++) {
+        tableInnerHtml += `<tr>`;
+        for (let i = 1; i <= columnNum; i++) {
+          tableInnerHtml += `<td>${tableData}</td>`;
+          tableData++;
+        }
+        tableInnerHtml += `</tr>`;
+      }
+      tableInnerHtml += `</table>`;
+
+      divTableArea.innerHTML = tableInnerHtml;
+    }
   </script>
 
   <!-- 3번 -->
@@ -38,11 +79,29 @@
   <button type="button" onclick="getOrange()">체험시작</button>
   <div class="basket" style="display: flex; flex-wrap: wrap;">
     <!-- 귤이 들어갈 자리 -->
+    <!-- <img src="./images/gyul.png" alt=""> -->
+     
   </div>
 
   <script>
     // 3번
-    
+    const button = document.querySelector('button');
+    const divBasbet = document.querySelector('.basket');
+
+    let cnt = 0;
+
+    let basketInnerHtml = '';
+    function getOrange() {
+      if (cnt < 20) {
+        divBasbet.innerHTML += '<img src="./images/gyul.png" alt="">';
+        cnt ++;
+        console.log(cnt);
+      } else {
+        // TODO: 체험 종료 문구가 한 번만 뜨고 안 뜨게 만들기
+        basketInnerHtml = `${divBasbet.innerHTML}<br><h1>체험 종료!!</h1>`;
+        divBasbet.innerHTML = basketInnerHtml;
+      }
+    }
   </script>
 </body>
 </html>

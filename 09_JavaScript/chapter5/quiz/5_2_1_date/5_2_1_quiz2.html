@@ -18,11 +18,38 @@
     // let date = new Date(2023, 0, 5); // 2023년 1월 5일
     // "THU"가 출력되어야 합니다.
 
-    // 풀이2-1
+    const target = new Date();
+    console.log(target);
     
+    const targetDay = target.getDay();
+    console.log(targetDay);
+
+    // 풀이2-1
+    // 조건문
+    let targetDayStr;
+    switch (targetDay) {
+      case 0:
+      targetDayStr= 'SUN'; break;
+      case 1:
+      targetDayStr= 'MON'; break;
+      case 2:
+      targetDayStr= 'TUE'; break;
+      case 3:
+      targetDayStr= 'WED'; break;
+      case 4:
+      targetDayStr= 'THU'; break;
+      case 5:
+      targetDayStr= 'FRI'; break;
+      case 6:
+      targetDayStr= 'SAT'; break;
+    }
+    document.writeln(targetDayStr);
     
     // 풀이2-2
-    
+    // 배열
+    const dayArr = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    targetDayStr = dayArr[targetDay];
+    document.writeln(targetDayStr);
   </script>
 </head>
 <body>

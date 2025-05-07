@@ -5,14 +5,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   <script>
     // 문제1
     // 날짜 생성하기
 
     // 2023년 2월 20일, 오전 3시 12분을 나타내는 Date 객체를 만들어보세요.
     // 그리고 생성한 날짜 객체 정보를 예쁘게 출력하세요.
+    const d1 = new Date(2023, 1, 20, 3, 12);
+    document.writeln(d1);
+    document.writeln('<br>');
+    
+    // dayjs 사용
+    const d2 = dayjs(d1);
+    document.writeln(d2.format("YY-MM-DD")); // 21-10-11
+    console.log(d2);
+    
+
 
     // 풀이1
+    // 월/일 이 한 자리인 경우, 앞에 0을 추가하는 방법 - padStart()
+    // (ES2017) padStart(문자열의 총 길이, 추가할 문자): 문자열 앞에 지정된 문자를 지정된 길이만큼 추가
+    // -> 인자값을 문자열로 전달해야 함 - String() 이용
+
+    // 지역(locale) 별로 변환해주는 메소드 - toLocaleString(): 날짜+시간 | toLocaleDateString(): 날짜
+
     
   </script>
 </head>
