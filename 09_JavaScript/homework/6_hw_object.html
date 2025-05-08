@@ -5,24 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body style="background-color: aquamarine;">
+<body>
+  <!-- 1. 랜덤값 추력 -->
+  <h1>내맘대로 랜덤</h1>
+  <label for="start">시작</label>
+  <input type="text"id="start">
+  <br>
+  <label for="end">종료</label>
+  <input type="text"id="end">
+  <br>
+  <button type="button" id="excute" onclick="generateRandomNum()">실행</button>
+
+  <script>
+    const generateRandomNum = () => {
+      const start = Number(document.querySelector('#start').value);
+      const end = Number(document.querySelector('#end').value);
+      
+      // 길이가 10인 배열 생성
+      const arr = new Array(10);
+
+      for(let i = 0; i < arr.length; i++) {
+        // 랜덤값 생성 (start <= x <= end) 후 배열에 저장
+        let randomNum = Math.floor(Math.random()*(end - start + 1)) + start;      
+        arr[i] = randomNum;
+      }
+      alert(arr);
+    };
+  </script>
+
+  <br>
+
+  <!-- 2. Math 객체 연습 -->
+  <h1>Math 객체 연습</h1>
+  <p id="floor">Floor: 7.8</p>
+  <p id="round">Round: 5.5</p>
+  <p id="ceil">Ceil: 3.2</p>
+  <p id="abs">Abs: -15</p>
+  <p id="pow">Pow: 3^4</p>
+  <button onclick="applyMathFunctions();">Math 함수 적용</button>
+  <script src="./6_hw_object.js"></script>
+
   <!-- 4. 랜덤 배경색 -->
   <button type="button" id="btn-changeColor" onclick="">바꾸기</button>
+
+  <script>
+    const btnChangeColor = document.querySelector('#btn-changeColor');
+    const body = document.querySelector('body');
+    
+    btnChangeColor.addEventListener('click', () => {    
+      const ramdomColor = `rgba(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.random()})`;
+      body.style.backgroundColor = ramdomColor;
+      body.innerText = `현재 배경색: ${ramdomColor}`;
+    })
+  </script>
 </body>
 </html>
-
-<script>
-  const btnChangeColor = document.querySelector('#btn-changeColor');
-  const body = document.querySelector('body');
-  
-  // btnChangeColor.addEventListener('click', () => {    
-  //   const ramdomColor = '#' + Math.floor(Math.random()*1000000);
-  //   body.style.backgroundColor = ramdomColor;
-  //   body.innerText = `현재 배경색: ${ramdomColor}`;
-  // })
-  btnChangeColor.addEventListener('click', () => {    
-    const ramdomColor = `rgba(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.random()})`;
-    body.style.backgroundColor = ramdomColor;
-    body.innerText = `현재 배경색: ${ramdomColor}`;
-  })
-</script>
