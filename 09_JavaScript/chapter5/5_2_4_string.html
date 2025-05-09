@@ -125,6 +125,8 @@
     document.write(res, '<br>');
     res = str.substring(7);
     document.write(res, '<br>');
+    res = str.substring(-12); // 음수를 0으로 치환하여 동작함
+    document.write(res, '<br>');
     
     // 6) substr()
     // slice() 함수와 매우 유사
@@ -135,6 +137,10 @@
     document.write(res, '<br>');
     res = str.substr(-12);
     document.write(res, '<br>');
+
+    // [궁금] slice()와 substr()의 차이점
+    // slice() - 배열, 문자열 에 사용 가능
+    // substr() - 문자열 에만 사용 가능 (배열에 사용 불가)
 
     // 실습: 주민등록번호를 입력받은 후 정보가 노출되지 않도록 뒤의 여섯자리는 ******로 출력하세요.
     document.write('<h4>실습: 주민등록번호 마스킹</h4>');
