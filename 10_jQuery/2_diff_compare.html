@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    ul {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+    }
+    #navigation li {
+      padding: 5px;
+    }
+    #navigation .selected {
+      background-color: red;
+      color: white;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <ul id="navigation">
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>JavaScript</li>
+    <li class="selected">jQuery</li>
+    <li>Bootstrap</li>
+  </ul>
+
+  <script>
+    // JavaScript VS jQuery
+    // 1) JavaScript
+    /*
+    const lis = document.querySelectorAll('#navigation li');
+    // console.log(lis);
+
+    lis.forEach(li => { // 모든 li에 eventListener 추가
+      // console.log(li);
+      li.addEventListener('click', () => { // li가 클릭되면 아래의 코드 실행
+        // 모든 li의 selected class 삭제
+        lis.forEach(li => li.classList.remove('selected')); 
+        // 클릭된 li에 selected class
+        li.classList.add('selected');
+        // this.classList.add('selected');
+        // addEventListener() 안의 콜백 함수가 화살표 함수가 아닌 function 키워드 함수라면, this 키워드로 작성할 수도 있음        
+      });
+    });
+    */
+
+    // 2) jQuery
+    $('#navigation li').click(function () { // 반복을 돌면서 요소를 꺼내올 필요 없이, 바로 이벤트 리스너를 달 수 있음
+      $('#navigation li').removeClass('selected');
+      $(this).addClass('selected');
+    });
+  </script>
+</body>
+</html>
