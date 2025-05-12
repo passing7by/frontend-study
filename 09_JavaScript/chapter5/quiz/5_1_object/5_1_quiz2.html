@@ -20,6 +20,11 @@
       lastName: '지남',
       age: 28,
       gender: '여자',
+      test: {
+        'test 1': {
+          'test 2': 'test 3'
+        }
+      },
       'my hobby': ['동영상 편집', '책읽기', '고양이 유튜브 시청', '노래 부르기', '자전거 타기', '친구 만나기'],
       getFullName: function () {
         return this.firstName + this.lastName;
@@ -33,6 +38,8 @@
       }
     }
 
+    console.log(person['test']['test 1']['test 2']);
+    
     document.write(person);
     document.write('<br>', JSON.stringify(person));
     document.write('<br>', person.firstName);
