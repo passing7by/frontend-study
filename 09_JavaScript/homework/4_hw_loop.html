@@ -79,14 +79,14 @@
   <button type="button" onclick="getOrange()">체험시작</button>
   <div class="basket" style="display: flex; flex-wrap: wrap;">
     <!-- 귤이 들어갈 자리 -->
-    <!-- <img src="./images/gyul.png" alt=""> -->
-     
   </div>
+  <h1 id="TrialEnd"></h1>
 
   <script>
     // 3번
     const button = document.querySelector('button');
     const divBasbet = document.querySelector('.basket');
+    const TrialEnd = document.querySelector('#TrialEnd');
 
     let cnt = 0;
 
@@ -97,9 +97,7 @@
         cnt ++;
         console.log(cnt);
       } else {
-        // TODO: 체험 종료 문구가 한 번만 뜨고 안 뜨게 만들기
-        basketInnerHtml = `${divBasbet.innerHTML}<br><h1>체험 종료!!</h1>`;
-        divBasbet.innerHTML = basketInnerHtml;
+        TrialEnd.innerText = '체험 종료!!';
       }
     }
   </script>
