@@ -79,7 +79,9 @@
       // console.log($(this));
       // [궁금] 왜 this.totoggleClass('highlight') 는 안 될까?
       // -> totoggleClass()는 jQuery 문법임. this는 vanila js 문법임.
-      // TODO: 이어서 적기
+      // jQuery 문법과 vanila js 문법은 혼용 가능.
+      // 근데 왜 안됨? -> this 와 $(this) 의 반환값이 다르기 때문
+      // 
       $(this).toggleClass('highlight');
     });
   </script>
@@ -103,6 +105,24 @@
     $('#chk').on('change', function () {
       console.log($(this).attr('checked')); // "checked" (초기 html에 있는 속성값을 그대로 읽음)
       console.log($(this).prop('checked')); // true 또는 false (실제 체크 상태를 반영)
+    });
+  </script>
+
+  <!-- test -->
+  <button class="btn" value="버튼">Button</button>
+
+  <script>
+    $('.btn').on('click', function() {
+        console.log(this); // DOM 객체
+        console.log($(this)); // jQuery 컬렉션 객체
+        console.log(typeof this); // object
+        console.log(typeof $(this)); // object
+        
+        console.log($(this)[0]); // jQuery 컬렉션 객체로 감싸져 있던 태그 객체 (=this)
+        console.log(typeof $(this)[0]); // object
+        console.log($(this)[0].value);
+        // DOM 객체를 반환하므로 val()이라는 jQuery 메서드 사용 불가
+        // JS 문법인 .value 로 value 속성에 접근해야 함
     });
   </script>
 </body>
